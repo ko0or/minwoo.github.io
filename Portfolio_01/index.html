@@ -23,6 +23,8 @@
 
 
         */
+       
+        // 프로필란에 p 태그 display 방식 변경 (mouseOver 혹은 mouseLeave)
         function descriptionBlock(element) { 
             var description = element.nextElementSibling;
             description.style.display = "block";
@@ -32,6 +34,29 @@
             var description = element.nextElementSibling;
             description.style.height = "0";
         }
+
+
+        // 화면에 이벤트반응을 추가함
+        // 특정구간 아래로 가면, 상단으로 올라가는 버튼을 표시해줌
+        window.addEventListener('scroll', function() {
+            var upArrow = document.querySelector('.up_arrow');
+            var target = document.querySelector('.img-banner');
+
+            if (window.scrollY > 0) {
+                upArrow.style.opacity = '1';
+                upArrow.style.pointerEvents = 'auto';
+            } else {
+                upArrow.style.opacity = '0';
+
+            }
+
+            if (window.scrollY <= target.offsetHeight - 500) {
+                upArrow.style.opacity = '0';
+                upArrow.style.pointerEvents = 'none';
+                
+            }
+            });
+
     </script>
 </head>
 <body id="top">
@@ -45,22 +70,26 @@
             <nav>
                 <ul>
                     <li><a href="#profile">소개</a></li>
-                    <li><a href="#">작품</a></li>
-                    <li><a href="#">블로그</a></li>
+                    <li><a href="#skill">작품</a></li>
+                    <li><a href="#blog">블로그</a></li>
                 </ul>
             </nav>        
         </header>
     </div>
 
 
+    <!-- 상단으로 보내주기 -->
+    <a href="#top"><div class="up_arrow">↑</div></a>
+
+
     <!-- 페이지 본문 -->
     <section>
         <!-- 아티클 첫번째,  배너 -->
         <article class="banner_wrapper">
-            <div class="img-banner" style="max-height: 600px; overflow: hidden;">
-                <img src="https://cdn.pixabay.com/photo/2017/08/23/10/28/ulsan-2672233_960_720.jpg" alt="" style="width: 100vw; height: 1500px;">
+            <div class="banner_cut">
+                <img src="https://cdn.pixabay.com/photo/2017/08/23/10/28/ulsan-2672233_960_720.jpg" alt="" class="banner_img">
             </div>
-            <div class="text-banner" style="position: relative; top: -400px; z-index: 0;">
+            <div class="banner_text">
                 <h1 style="color: white; font-size: 48;">어린 개발자의 포트폴리오 사이트</h1>
                 <p style="color: white;">현재 보고계신 페이지는 데스크탑에 최적화되어있습니다 😀</p>
             </div>
@@ -141,14 +170,35 @@
         
         
         
-        <!-- 아티클 세번째,  블로그 -->
-        <article>
-            <h4>Hello world ✨</h4>
+        <!-- 아티클 세번째,  작품 -->
+        <article class="skill_wrapper" id="skill">
+            <div class="down_arrow" style="margin-bottom: 50px;">▼</div>
+            
+            <h1 class="title_skill">제가 만들었던 작품들을 소개합니다</h1>
+            <div class="item_wrapper">
+                <div class="items">
+                    <div class="items_bg">
+                        <h1>개인 포트폴리오</h1><br>
+                        <p>400x400 사이즈</p>
+
+                    </div>
+                </div>
+                <div class="items">
+                    <h1>개인 포트폴리오</h1>
+                    <p>400x400 사이즈</p>
+                </div>
+                <div class="items">
+                    <h1>팀 포트폴리오</h1>
+                    <p>400x400 사이즈</p>
+                </div>
+                
+                
+            </div>
         </article>
         
         
-        <!-- 아티클 네번째,  포트폴리오 -->
-        <article>
+        <!-- 아티클 네번째,  블로그 -->
+        <article class="blog_wrapper" id="blog">
             <h4>Hello world ✨</h4>
         </article>
 
@@ -159,7 +209,7 @@
 
     <!-- 페이지 하단 -->
     <footer>
-        <p>ⓒ 작성일시 2023.02.28</p>
+        <p>COPYRIGHT 2023. MINWOO. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
