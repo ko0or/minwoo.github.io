@@ -1,0 +1,222 @@
+/* 
+    전체적용 
+    -------------------------->
+*/
+@font-face {
+    font-family: 'BMEuljiro';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.ttf') format("truetype");
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    font-family: BMEuljiro, serif;
+    font-weight: normal;
+}
+
+
+
+/* 
+    header (상단)
+    -------------------------->
+    */
+
+.wrapper {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+header {
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+}
+header > .logo > p > a {
+    font-size: 28px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    text-decoration: none;
+}
+header > .logo > p > a:hover {
+    transition: 0.2s;
+    color: blue;
+}
+
+
+nav > ul > li {
+    display: inline;
+    font-size: 22px;
+}
+
+nav > ul > li:not(:last-child) {
+    margin-right: 50px;
+}
+
+nav > ul > li:hover > a {
+    color: blue;
+}
+
+nav > ul > li > a {
+    position: relative;
+    top: 13px;
+    text-decoration: none;
+    color: black;           
+    
+}
+
+nav > ul > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(222, 184, 135, 0.5);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+nav > ul > li > a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    
+}
+
+
+
+
+/* 
+    section (중앙)
+    -------------------------->
+*/
+section {
+    width: 100%;
+    height: 2000px;
+}
+
+
+
+
+
+/* 
+    영역 구분 (아래 화살표)
+    -------------------------->
+*/
+.down_arrow {
+    text-align: center;
+    font-size: 30px;
+    color: grey;
+    padding: 10px;
+    position: relative;
+    animation: moveUpDown 0.7s ease-in-out infinite alternate;
+}
+@keyframes moveUpDown {
+    from {
+      top: 0;
+    }
+    to {
+      top: 10px;
+    }
+  }
+
+
+
+
+/* 
+    article - 첫번째 (배너)
+    -------------------------->
+*/
+.banner_wrapper > .text-banner > h1, p {
+    text-align: center;
+}
+
+
+/* 
+    article - 두번째 (프로필)
+    -------------------------->
+*/
+.profile_wrapper {
+    margin-top: 100px;
+    display: flex;
+    padding: 20px;
+    height: 800px;
+}
+.profile_wrapper > .profile_left {
+    margin-right: 150px;
+    margin-left: 100px;
+}
+.profile_wrapper > .profile_left > img {
+    width: 500px;
+    height: 600px;
+}
+
+
+
+.profile_wrapper > .profile_right h4, 
+.profile_wrapper > .profile_right p {
+    margin-top: 20px;
+    position: relative;
+    text-align: left;
+}
+.profile_wrapper > .profile_right > .profile_show > p {
+    text-align: left;
+    display: none;
+    margin: 5px;
+
+    transition: height 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+
+}
+.profile_wrapper > .profile_right h4:hover {
+    margin-top: 20px;
+    cursor: pointer;
+    color: darksalmon;
+    transition: ease 0.3s;
+}
+
+  
+
+  
+
+.tag_border {
+    background-color: thistle;
+    color: white;
+    border-radius: 10px;
+    padding: 7px;
+
+}
+
+
+
+
+
+
+/* 
+    footer (하단)
+    -------------------------->
+*/
+footer {
+    width: 100%;
+    background-color: darkslategrey;
+}
+footer > p {
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin: 0px;
+}
