@@ -33,6 +33,8 @@
     -------------------------->
 */
 .up_arrow {
+    z-index: 1;
+
     transition: ease-in-out 0.3s;
     position: fixed;
     
