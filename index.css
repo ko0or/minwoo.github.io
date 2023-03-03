@@ -276,11 +276,7 @@ section {
 }
 
 .items:nth-child(1) {
-    background-image: url("./first.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    
+    background: url('./first.png') no-repeat center center/cover
 }
 
 
