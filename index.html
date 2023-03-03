@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>민우의 포트폴리오</title>
+
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        /*
+        === 아래 css 효과 이용해서, 부드럽게 내려오는걸로 구현 ===
+        .profile_wrapper > .profile_right > .profile_show > p {
+        text-align: left;
+        display: none;
+        margin: 5px;
+
+        transition: height 0.5s ease-in-out;
+        height: 0;
+        overflow: hidden;
+        }
+
+
+        */
+       
+        // 프로필란에 p 태그 display 방식 변경 (mouseOver 혹은 mouseLeave)
+        function descriptionBlock(element) { 
+            var description = element.nextElementSibling;
+            description.style.display = "block";
+            description.style.height = description.scrollHeight + "px";
+        }
+        function descriptionNone(element) {
+            var description = element.nextElementSibling;
+            description.style.height = "0";
+        }
+
+
+        // 화면에 이벤트반응을 추가함
+        // 특정구간 아래로 가면, 상단으로 올라가는 버튼을 표시해줌
+        window.addEventListener('scroll', function() {
+            var upArrow = document.querySelector('.up_arrow');
+            var target = document.querySelector('.img-banner');
+
+            if (window.scrollY > 0) {
+                upArrow.style.opacity = '1';
+                upArrow.style.pointerEvents = 'auto';
+            } else {
+                upArrow.style.opacity = '0';
+
+            }
+
+            if (window.scrollY <= target.offsetHeight - 500) {
+                upArrow.style.opacity = '0';
+                upArrow.style.pointerEvents = 'none';
+                
+            }
+            });
+
+    </script>
+</head>
+<body id="top">
+    <!-- 웹페이지 감싸주기 -->
+    <div class="wrapper">
+        <!-- 페이지 상단 -->
+        <header>
+            <div class="logo">
+                <p><a href="#top">dev</a></p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#profile">소개</a></li>
+                    <li><a href="#skill">작품</a></li>
+                    <li><a href="#blog">블로그</a></li>
+                </ul>
+            </nav>        
+        </header>
+    </div>
+
+
+    <!-- 상단으로 보내주기 -->
+    <a href="#top"><div class="up_arrow">↑</div></a>
+
+
+    <!-- 페이지 본문 -->
+    <section>
+        <!-- 아티클 첫번째,  배너 -->
+        <article class="banner_wrapper">
+            <div class="banner_cut">
+                <img src="https://cdn.pixabay.com/photo/2017/08/23/10/28/ulsan-2672233_960_720.jpg" alt="" class="banner_img">
+            </div>
+            <div class="banner_text">
+                <h1 style="color: white; font-size: 48;">어린 개발자의 포트폴리오 사이트</h1>
+                <p style="color: white;">현재 보고계신 페이지는 데스크탑에 최적화되어있습니다 😀</p>
+            </div>
+            <div class="down_arrow" id="profile">▼</div>
+        </article>
+
+
+        <!-- 아티클 두번째,  프로필 -->
+        <article class="profile_wrapper">
+            <div class="profile_left">
+                <img src="./profile_img.jpg" alt="프로필 사진">
+            </div>
+            <div class="profile_right">
+                <h1><mark>어린개발자 김민우</mark>입니다 !</h1>
+                <br>
+
+                <span class="tag_border">#성실</span>
+                <span class="tag_border">#노력</span>
+                <span class="tag_border">#꾸준함</span>
+                
+                
+                <p style="margin-top: 20px;">
+                    √ 세종사이버대학교 응용 소프트웨어공학과 학생 <br>
+                    √ 그린컴퓨터아카데미 자바&스프링 프레임워크 개발자 양성과정 23-1 수료
+                </p>
+                <hr>
+                <p style="color: gray; font-family: 맑은고딕; font-size: 12px;">※ 아래 내용들 위에 마우스를 올려보세요</p>
+                <br>
+
+                <div class="profile_show">
+                    <h4 onmouseover="descriptionBlock(this)" onmouseleave="descriptionNone(this)">✍ 하루하루 꾸준히 일기를 작성하고있습니다</h4>
+                    <p><br>
+                        배우고, 느낀점은 다음에 찾아보기 쉽게
+                        <br>
+                        주로 <span class="tag_border">네이버블로그 포스팅</span>으로 기록하고있습니다
+
+                    </p>
+                </div>
+                <div class="profile_show">
+                    <h4 onmouseover="descriptionBlock(this)" onmouseleave="descriptionNone(this)">💭 어린아이처럼 꿈꾸고 있습니다</h4>
+                    <p><br>
+                        <span class="tag_border">성숙한 어른개발자</span>가되어 협동하고,
+                        <br>
+                        어린 개발자를 키워줄 수 있는 어른이 되고싶습니다 :)
+                    </p>
+                </div>
+                <div class="profile_show">
+                    <h4 onmouseover="descriptionBlock(this)" onmouseleave="descriptionNone(this)">🐣 어제보다 더 성장할 수 있습니다</h4>
+                    <p><br>
+                        저는 생각하고, 시도해보는걸 좋아합니다.
+                        <br>
+                        만약 <span class="tag_border">못한게 있으면, 어떤 방법을 해볼 수 있을까</span> 생각합니다.
+                        <br>
+                        그리고 <span class="tag_border">알아낸 방법은 블로그에 기록</span>을 남겨두고 있습니다 !
+                    </p>
+                </div>
+                <div class="profile_show">
+                    <h4 onmouseover="descriptionBlock(this)" onmouseleave="descriptionNone(this)">💦 실패를 두려워하지 않습니다</h4>
+                    <p><br>
+                        
+                        실패는, 제가 무언가를 도전해봤다는 증거이고
+                        <br>
+                        
+                        또한 <span class="tag_border">해결하지못한 문제의 원인을 알려주는 열쇠</span>라 생각합니다
+                        <br>
+
+                        그래서 저는, 실패를 두려워하지 않습니다.
+                        
+                        
+
+                    </p>
+                </div>
+                <br>
+
+            </div>
+        </article>
+        
+        
+        
+        
+        <!-- 아티클 세번째,  작품 -->
+        <article class="skill_wrapper" id="skill">
+            <div class="down_arrow" style="margin-bottom: 50px;">▼</div>
+            
+            <h1 class="title_skill">제가 만들었던 작품들을 소개합니다</h1>
+            <div class="item_wrapper">
+                <div class="items" onclick="window.open('https://blog.naver.com/taehwa10404/223023561896')">
+                    <div class="items_bg">
+                    <h1>개인 포트폴리오</h1><br>
+                    <p>400x400 사이즈</p>
+                    </div>
+                </div>
+                <div class="items">
+                    <h1>개인 포트폴리오</h1>
+                    <p>400x400 사이즈</p>
+                </div>
+                <div class="items">
+                    <h1>팀 포트폴리오</h1>
+                    <p>400x400 사이즈</p>
+                </div>
+                
+                
+            </div>
+        </article>
+        
+        
+        <!-- 아티클 네번째,  블로그 -->
+        <article class="blog_wrapper" id="blog">
+            <h4>Hello world ✨</h4>
+        </article>
+
+
+    </section>
+
+
+
+    <!-- 페이지 하단 -->
+    <footer>
+        <p>COPYRIGHT 2023. MINWOO. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>

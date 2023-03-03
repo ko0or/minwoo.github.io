@@ -1,0 +1,374 @@
+/* 
+    전체적용 
+    -------------------------->
+*/
+@font-face {
+    font-family: 'BMEuljiro';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.ttf') format("truetype");
+    font-display: swap;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-decoration-line: none;
+    color: black;
+    font-family: BMEuljiro, serif;
+    font-weight: normal;
+}
+
+
+/* 
+    up-arrow(상단으로),   down-arrow(하단으로)
+    -------------------------->
+*/
+.up_arrow {
+    transition: ease-in-out 0.3s;
+    position: fixed;
+    
+    opacity: 0;
+    cursor: pointer;
+
+    right: 50px;
+    bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 50px;
+    height: 50px;
+    background-color: aquamarine;
+}
+.up_arrow:hover {
+    transform: translateY(-5px);
+    background-color: bisque;
+    color: blueviolet;
+}
+.down_arrow {
+    text-align: center;
+    font-size: 30px;
+    color: grey;
+    padding: 10px;
+    position: relative;
+    animation: moveUpDown 0.7s ease-in-out infinite alternate;
+}
+@keyframes moveUpDown {
+    from {
+      top: 0;
+    }
+    to {
+      top: 10px;
+    }
+  }
+
+
+
+
+
+/* 
+    header (상단)
+    -------------------------->
+    */
+
+.wrapper {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+header {
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+}
+header > .logo > p > a {
+    font-size: 28px;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    text-decoration: none;
+}
+header > .logo > p > a:hover {
+    transition: 0.2s;
+    color: blue;
+}
+
+
+nav > ul > li {
+    display: inline;
+    font-size: 22px;
+}
+
+nav > ul > li:not(:last-child) {
+    margin-right: 50px;
+}
+
+nav > ul > li:hover > a {
+    color: blue;
+}
+
+nav > ul > li > a {
+    position: relative;
+    top: 13px;
+    text-decoration: none;
+    color: black;           
+    
+}
+
+nav > ul > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(222, 184, 135, 0.5);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+nav > ul > li > a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    
+}
+
+
+
+
+/* 
+    section (중앙)
+    -------------------------->
+*/
+section {
+    width: 100%;
+
+}
+
+
+
+
+/* 
+    article - 첫번째 (배너)
+    -------------------------->
+*/
+.banner_text {
+    position: relative; 
+    top: -400px; 
+    z-index: 0; 
+    text-align: center;
+}
+
+.banner_img {
+    width: 100vw; 
+    height: 1500px;
+}
+.banner_cut {
+    max-height: 600px; 
+    overflow: hidden;
+}
+
+
+/* 
+    article - 두번째 (프로필)
+    -------------------------->
+*/
+.profile_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    
+
+    justify-content: space-evenly;
+
+    padding: 20px;
+    min-height: 970px;
+    margin-top: 100px;
+}
+
+.profile_wrapper > .profile_left > img {
+    max-width: 500px;
+    min-height: 600px;
+}
+
+
+
+.profile_wrapper > .profile_right h4, 
+.profile_wrapper > .profile_right p {
+    margin-top: 20px;
+    position: relative;
+    text-align: left;
+}
+.profile_wrapper > .profile_right > .profile_show > p {
+    text-align: left;
+    display: none;
+    margin: 5px;
+
+    transition: height 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+
+}
+.profile_wrapper > .profile_right h4:hover {
+    margin-top: 20px;
+    cursor: pointer;
+    color: darksalmon;
+    transition: ease 0.3s;
+} 
+
+.tag_border {
+    background-color: thistle;
+    color: white;
+    border-radius: 10px;
+    padding: 7px;
+
+}
+
+
+
+
+
+/* 
+    article - 세번째 (작품)
+    -------------------------->
+*/
+.item_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    min-height: 970px;
+    align-items: center;
+}
+.title_skill {
+    text-align: center; 
+    margin-bottom: 50px; 
+    position: relative; 
+    top: 150px;
+}
+
+.item_wrapper > .items {
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+
+    width: 400px;
+    height: 400px;
+    margin: 5px;
+    background-color: seagreen;
+    color: wheat;
+    
+    overflow: hidden;
+
+}
+.items:nth-child(1) {
+    background-image: url("./first.png");
+    background-size: cover;
+}
+
+
+.item_wrapper > .items > .items_bg {
+    transition: ease-in-out 0.3s;
+    opacity: 0;
+    background-color: rgba(0,0,0,0.8);
+    min-width: 400px;
+    height: 400px;
+}
+
+
+.item_wrapper > .items h1,
+.item_wrapper > .items p {
+    color: white;
+    transition: ease-in-out 0.3s;
+    opacity: 0;
+    text-align: center;
+    position: relative;
+    top: 40%;
+}
+.item_wrapper > .items:hover h1,
+.item_wrapper > .items:hover p,
+.item_wrapper > .items:hover .items_bg {
+    opacity: 1;
+}
+.item_wrapper > .items:hover {
+    transform: scale(0.98);
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+/* 
+    article - 네번째 (블로그)
+    -------------------------->
+*/
+.blog_wrapper {
+    min-height: 970px;
+}
+
+
+
+
+
+
+/* 
+    footer (하단)
+    -------------------------->
+*/
+footer {
+    width: 100%;
+    background-color: darkslategrey;
+}
+footer > p {
+    color: white;
+    height: 100px;
+    margin: 0px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width:1250px){
+    .item_wrapper > .items {
+        flex-basis: calc(calc(768px - 100%) * 1000000);
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+
+    .title_skill {
+        text-align: center; 
+        margin-bottom: 50px; 
+        position: relative; 
+        top: 0px;
+    }
+
+
+    .banner_text {
+        position: relative; 
+        top: -130px; 
+        z-index: 0; 
+        text-align: center;
+    }
+
+    .banner_img {
+        width: 100vw; 
+        height: 1500px;
+    }
+    .banner_cut {
+        max-height: 200px; 
+        overflow: hidden;
+    }
+}
