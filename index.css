@@ -13,7 +13,12 @@
     url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.ttf') format("truetype");
     font-display: swap;
 }
-
+@font-face {
+    font-family: 'KIMM_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
 
 
@@ -253,14 +258,38 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
 
-    min-height: 970px;
+    min-height: 680px;
     align-items: center;
 }
 .title_skill {
     text-align: center; 
-    margin-bottom: 50px; 
-    position: relative; 
-    top: 150px;
+}
+
+.fontawesome_wrapper {
+    letter-spacing: 15px;
+    text-align: center; 
+    max-width: 700px;
+    
+    padding: 20px;
+    margin: 0px auto;
+
+    
+}
+.fontawesome_wrapper > i:not(:first-child) {
+    font-size: 100px; 
+    color: seagreen;
+    transition: ease-in-out 0.3s;
+}
+
+.fontawesome_wrapper > i:not(:nth-child(10), :first-child) {
+    border-right: 2px solid rgba(222, 184, 135, 0.1);
+    padding-right: 10px;
+}
+
+.fontawesome_wrapper i:hover:not(:first-child)  {
+    color: blue;
+    transform: scale(1.1);
+
 }
 
 .item_wrapper > .items {
@@ -274,8 +303,17 @@ section {
     color: wheat;
     
     overflow: hidden;
-
 }
+
+#skillsDescript {
+    text-align: center; 
+    display: block; 
+    transition: ease-in-out 0.5s; 
+    overflow: hidden; 
+    height: 0px;
+}
+
+
 
 .items:nth-child(1) {
     background: url('./first.png') no-repeat center center/cover
