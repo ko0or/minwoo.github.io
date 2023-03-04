@@ -30,7 +30,7 @@
                 <ul>
                     <li><a href="#profile">소개</a></li>
                     <li><a href="#skill">작품</a></li>
-                    <li><a href="#blog">블로그</a></li>
+                    <li><a href="#another">그리고</a></li>
                 </ul>
             </nav>        
         </header>
@@ -70,13 +70,13 @@
                 <span class="tag_border">#꾸준함</span>
                 
                 
-                <p style="margin-top: 20px; font-family: KIMM_Bold;">
+                <p style="margin-top: 20px; font-family: BMJUA;">
                     1️⃣ 사이버대학교 응용소프트웨어공학과 재학중 <br>
                     2️⃣ 국비지원과정 자바&스프링 프레임워크 개발자 양성과정 수료
                 </p>
                 <hr>
 
-                <p style="color: gray; font-family: KIMM_Bold; font-size: 12px; letter-spacing: 1px;"><i class="fa-solid fa-computer-mouse" style="color: gray;"></i> 아래 내용들 위에 마우스를 올려보세요</p>
+                <p style="font-style: normal; font-size: 14px; color: grey; font-family: BMJUA; letter-spacing: 0px;"><i class="fa-solid fa-computer-mouse" style="color: gray;"></i> 아래 내용들 위에 마우스를 올려보세요</p>
                 <br>
 
                 <div class="profile_show">
@@ -135,11 +135,11 @@
             <div class="down_arrow" style="margin-bottom: 50px;">▼</div>
             
             <br>
-
+            <div class="skillsIcon">
                 <p class="fontawesome_wrapper">
-                    <i style="font-style: normal; font-size: 32px;">사용가능한 기술들</i>
+                    <i style="font-style: normal; font-size: 32px; letter-spacing: 0px; font-family: BMJUA;">사용가능한 기술들</i>
                     <br>
-                    <i style="font-style: normal; font-size: 12px; letter-spacing: 1px; color: grey; font-family: KIMM_Bold;"><i class="fa-solid fa-computer-mouse" style="color: gray;"></i> 아래 내용들 위에 마우스를 올려보세요</i>
+                    <i style="font-style: normal; font-size: 18px; color: grey; font-family: BMJUA; letter-spacing: 0px;"><i class="fa-solid fa-computer-mouse" style="color: gray;"></i> 아래 내용들 위에 마우스를 올려보세요</i>
                     <br><br>
                     
                     <i class="fa-brands fa-html5" onmouseover="skilsDescriptionBlock('HTML')" onmouseleave="skillsDescriptionNone()"></i>
@@ -147,21 +147,27 @@
                     <i class="fa-brands fa-square-js" onmouseover="skilsDescriptionBlock('JS')" onmouseleave="skillsDescriptionNone()"></i>
                     <i class="fa-solid fa-mug-hot" onmouseover="skilsDescriptionBlock('JAVA')" onmouseleave="skillsDescriptionNone()"></i>
                     <i class="fa-solid fa-leaf" onmouseover="skilsDescriptionBlock('SPRING')" onmouseleave="skillsDescriptionNone()"></i>
+                    <i class="fa-brands fa-python" onmouseover="skilsDescriptionBlock('PYTHON')" onmouseleave="skillsDescriptionNone()"></i>
                     <br>
                     
+                    <!-- 
+                        언제    ?    사용가능한 기술들 아이콘에 마우스 이벤트 발생시
+                        어떻게  ?     자바스크립트로 아래 h1, h4태그 내용을 입력해줌
+                    -->
                     <div id="skillsDescript">
                         <br>
                         <h1 id="skilsDescriptTitle"></h4>
                         <h4 id="skilsDescriptContent"></h4>
                     </div>
+
                 </p>
-                    
+            </div>
             <br>
                 
             <div class="item_wrapper">
                 
                 
-                <div class="items" onclick="//window.open('https://blog.naver.com/taehwa10404/223023561896')">
+                <div class="items" onclick="window.open('https://blog.naver.com/taehwa10404/223023561896')">
                     <h1>연습용 이미지</h1><br>
                     <p>
                         스프링부트 독학으로 게시판만들어보기
@@ -184,9 +190,55 @@
         </article>
         
         
-        <!-- 아티클 네번째,  블로그 -->
-        <article class="blog_wrapper" id="blog">
-            <h4>Hello world ✨</h4>
+        <!-- 아티클 네번째,  기타 -->
+        <article class="another_wrapper" style="text-align: center; display: flex; justify-content: center; align-items: center;">
+            <div id="another" class="another_wrapper_wrapper2">
+                <i class="fa-solid fa-check" style="font-size: 64px; color: blue;"></i>
+                <div style="margin-top: 50px;"></div>
+                <h1>읽어주셔서 감사합니다 :)</h1>
+                <h4>마지막으로, 해당 페이지 관련 정보들입니다</h4>
+
+                <div class="anothersDescript">
+                    
+                    <div class="anotherItems">
+                        <h1>01</h1>
+                        <h2>블로그</h2>
+                        <hr>
+                        <i class="fa-brands fa-blogger"></i>                        
+                    </div>
+                    
+                    <div class="anotherItems">
+                        <h1>02</h1>
+                        <h2>깃허브</h2>
+                        <hr>
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    
+                    <div class="anotherItems">
+                        <h1>03</h1>
+                        <h2>웹폰트</h2>
+                        <hr>
+                        <i class="fa-brands fa-fonticons"></i>
+                    </div>
+                    
+                    <div class="anotherItems">
+                        <h1>04</h1>
+                        <h2>폰트어썸</h2>
+                        <hr>
+                        <i class="fa-brands fa-square-font-awesome"></i>
+                    </div>
+                    
+                    <div class="anotherItems">
+                        <h1>05</h1>
+                        <h2>부트스트랩</h2>
+                        <hr>
+                        <i class="fa-brands fa-bootstrap"></i>                        
+                    </div>
+                    
+                </div>
+
+            </div>
+
         </article>
 
 

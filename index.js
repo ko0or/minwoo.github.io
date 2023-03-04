@@ -33,39 +33,40 @@ function skilsDescriptionBlock(getItem) {
     var content = document.getElementById("skilsDescriptContent");
 
     if (getItem == "HTML") {
-        title.innerHTML = "HTML5";
+        title.innerHTML = "HyperTextMarkupLanguage";
         content.innerHTML = 
-        "설명"
-        + "<br>" + "2번째줄" 
-    ;}
+        "DOM 개념을 알고있으며, 기본 태그들을 응용할 수 있습니다.";
+    }
 
     if (getItem == "CSS") {
-        title.textContent = "CSS3";
+        title.innerHTML = "CastingStyleSheet";
         content.innerHTML = 
-        "설명"
-        + "<br>" + "2번째줄" 
-    ;}
+        "포지션, 레이아웃(FLEX), 애니메이션 효과를 응용할 수 있습니다.";
+    }
     
     if (getItem == "JS") {
-        title.textContent = "JS";
+        title.innerHTML = "JavaScript";
         content.innerHTML = 
-        "설명"
-        + "<br>" + "2번째줄" 
-    ;}
+        "자바스크립트로 CSS를 변경할 수 있습니다 ";
+    }
 
     if (getItem == "JAVA") {
-        title.textContent = "JAVA";
+        title.innerHTML = "Java";
         content.innerHTML = 
-        "설명"
-        + "<br>" + "2번째줄" 
-    ;}
+        "JDK 8 기준 mySQL API, Thread 응용이 가능합니다.";
+    }
 
     if (getItem == "SPRING") {
-        title.textContent = "SPRING";
+        title.innerHTML = "SpringBoot";
         content.innerHTML = 
-        "설명"
-        + "<br>" + "2번째줄" 
-    ;}
+        "게시글 작성,수정,삭제,조회를 할 수 있는 간단한 기능을 구현할 수 있습니다.";
+    }
+    
+    if (getItem == "PYTHON") {
+        title.innerHTML = "Python";
+        content.innerHTML = 
+        "PyQt5 라이브러리를통한 GUI 구현및 쓰레드를 활용한 병렬작업을 할 수 있습니다.";
+    }
 
     wrapper.style.display = "block";
     wrapper.style.height = wrapper.scrollHeight + "px";

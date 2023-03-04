@@ -19,6 +19,12 @@
     font-weight: 700;
     font-style: normal;
 }
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 
@@ -30,6 +36,7 @@
     color: black;
     font-family: BMEuljiro, serif;
     font-weight: normal;
+    cursor: default;
 }
 
 
@@ -130,6 +137,7 @@ nav > ul > li:hover > a {
 }
 
 nav > ul > li > a {
+    cursor: pointer;
     position: relative;
     top: 13px;
     text-decoration: none;
@@ -232,7 +240,7 @@ section {
 }
 .profile_wrapper > .profile_right h4:hover {
     margin-top: 20px;
-    cursor: pointer;
+    cursor: context-menu;
     color: darksalmon;
     transition: ease 0.3s;
 } 
@@ -253,22 +261,19 @@ section {
     article - 세번째 (작품)
     -------------------------->
 */
-.item_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
 
-    min-height: 680px;
-    align-items: center;
-}
 .title_skill {
     text-align: center; 
 }
 
+.skillsIcon {
+    max-height: 220px;
+    /* 반응형에서 수정 : 아래로 밀려나지않게 하기위해서 max-height 사용 */
+}
 .fontawesome_wrapper {
     letter-spacing: 15px;
     text-align: center; 
-    max-width: 700px;
+    max-width: 1000px;
     
     padding: 20px;
     margin: 0px auto;
@@ -281,7 +286,7 @@ section {
     transition: ease-in-out 0.3s;
 }
 
-.fontawesome_wrapper > i:not(:nth-child(10), :first-child) {
+.fontawesome_wrapper > i:not(:nth-child(11), :first-child) {
     border-right: 2px solid rgba(222, 184, 135, 0.1);
     padding-right: 10px;
 }
@@ -292,7 +297,23 @@ section {
 
 }
 
+
+
+
+.item_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    height: 680px;
+    align-items: center;
+
+    position: relative;    
+
+}
+
 .item_wrapper > .items {
+    
     transition: ease-in-out 0.2s;
     cursor: pointer;
 
@@ -301,6 +322,9 @@ section {
     margin: 5px;
     background-color: seagreen;
     color: wheat;
+
+    border: 2px solid grey;
+    box-shadow: rgba(0,0,0,0.3) 0px 5px 5px;
     
     overflow: hidden;
 }
@@ -311,6 +335,9 @@ section {
     transition: ease-in-out 0.5s; 
     overflow: hidden; 
     height: 0px;
+}
+#skilsDescriptTitle {
+    font-family: BMJUA;
 }
 
 
@@ -353,13 +380,37 @@ section {
 
 
 /* 
-    article - 네번째 (블로그)
+    article - 네번째 (기타)
     -------------------------->
 */
-.blog_wrapper {
+.another_wrapper {
     min-height: 970px;
 }
+.anothersDescript {
+    display: flex; 
+    justify-content: space-around;
+    width: 90vw;
+    margin-top: 100px;
+}
 
+.anothersDescript i {
+    font-size: 42px;
+}
+
+.anothersDescript hr,
+.anothersDescript h1,
+.anothersDescript h2,
+.anothersDescript i {
+    transition: ease-in-out 0.3s;
+}
+
+.anotherItems:hover h1, 
+.anotherItems:hover h2, 
+.anotherItems:hover i, 
+.anotherItems:hover hr  {
+    color: blue;
+    transform: translateY(-10px);
+  }
 
 
 
@@ -391,11 +442,10 @@ footer > p {
 
 
 
-/* 화면너비가 ~ 928px 까지일떄 */
+/* 화면너비가 ~ 928px 까지일떄 (모바일) */
 @media screen and (max-width:928px){    
     .item_wrapper > .items {        
-    width: 100%;
-
+        width: 100%;
     }
 
     .title_skill {
@@ -421,6 +471,16 @@ footer > p {
         max-height: 200px; 
         overflow: hidden;
     }
+
+    .skillsIcon {
+        min-height: 400px;
+    }
+
+
+    .another_wrapper {
+        margin-top: 500px;
+        
+    }
 }
 
 
@@ -430,5 +490,22 @@ footer > p {
         flex-basis: calc(calc(768px - 100%) * 1000000);
         flex-grow: 1;
         flex-shrink: 1;
+    }
+
+}
+
+/* 화면너비가 ~ 928px 까지일떄 (모바일) */
+@media screen and (max-width:928px){    
+
+
+    #skilsDescriptTitle {
+        font-size: 22px;
+    }
+    #skilsDescriptContent {
+        font-size: 22px;        
+    }
+
+    #skill > div.skillsIcon > p.fontawesome_wrapper > i {
+        font-size: 67px;
     }
 }
