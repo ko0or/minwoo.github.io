@@ -13,12 +13,7 @@
     url('https://cdn.jsdelivr.net/gh/webfontworld/BMEuljiro/BMEuljiro.ttf') format("truetype");
     font-display: swap;
 }
-@font-face {
-    font-family: 'KIMM_Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
+
 @font-face {
     font-family: 'BMJUA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
@@ -38,6 +33,66 @@
     font-weight: normal;
     cursor: default;
 }
+
+/* 
+    모달창
+    -------------------------->
+*/
+
+.modal-background {
+    /* 모달창이 열리지 않을 때는 보이지 않도록 설정 */
+    display: none;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+}
+    
+
+.modal-body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+
+    width: 500px;
+    height: 300px;
+    
+}
+
+.modal-texts h2,
+.modal-texts p
+    {
+    text-align: center;
+    width: 100%;
+}
+
+.modal-btns {
+    position: absolute;
+    bottom: 10px;
+}
+
+
+
+
+
+
+
 
 
 /* 
@@ -404,6 +459,14 @@ section {
     transition: ease-in-out 0.3s;
 }
 
+.anotherItems,
+.anothersDescript hr,
+.anothersDescript h1,
+.anothersDescript h2,
+.anothersDescript i {
+ cursor: pointer; 
+}
+
 .anotherItems:hover h1, 
 .anotherItems:hover h2, 
 .anotherItems:hover i, 
@@ -411,6 +474,8 @@ section {
     color: blue;
     transform: translateY(-10px);
   }
+
+
 
 
 
@@ -481,6 +546,25 @@ footer > p {
         margin-top: 500px;
         
     }
+
+    #skilsDescriptTitle {
+        font-size: 22px;
+    }
+    #skilsDescriptContent {
+        font-size: 22px;        
+    }
+
+    #skill > div.skillsIcon > p.fontawesome_wrapper > i {
+        font-size: 67px;
+    }
+
+
+    .modal-body {
+        width: 350px;
+        height: 300px;
+        left: 45%;
+    }
+
 }
 
 
@@ -494,18 +578,4 @@ footer > p {
 
 }
 
-/* 화면너비가 ~ 928px 까지일떄 (모바일) */
-@media screen and (max-width:928px){    
 
-
-    #skilsDescriptTitle {
-        font-size: 22px;
-    }
-    #skilsDescriptContent {
-        font-size: 22px;        
-    }
-
-    #skill > div.skillsIcon > p.fontawesome_wrapper > i {
-        font-size: 67px;
-    }
-}

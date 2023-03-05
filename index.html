@@ -16,9 +16,32 @@
     <!-- 폰트어썸 -->
     <script src="https://kit.fontawesome.com/e0db5bd3a2.js" crossorigin="anonymous"></script>
     
-    
+    <!--
+        font 2개 사용
+            BMEuljiro
+            BMJUA
+    -->
 </head>
 <body id="top">
+
+
+    <!-- 모달창 -->
+    <div class="modal-background">
+        <div class="modal-body">
+            <div class="modal-texts">
+                <h2 class="modal-title" style="font-family: BMJUA;">제목</h2>
+                <br>
+                <p class="modal-text">내용</p>
+            </div>
+            
+            <div class="modal-btns">
+                <button class="btn btn-outline-primary" id="modal-locate-btn" onclick="locateModal()">이동</button>
+                <button class="btn btn-outline-primary" id="modal-close-btn" onclick="hideModal()">닫기</button>
+            </div>
+        </div>
+    </div>
+
+
     <!-- 웹페이지 감싸주기 -->
     <div class="wrapper">
         <!-- 페이지 상단 -->
@@ -167,7 +190,7 @@
             <div class="item_wrapper">
                 
                 
-                <div class="items" onclick="window.open('https://blog.naver.com/taehwa10404/223023561896')">
+                <div class="items" onclick="newPage(1)">
                     <h1>연습용 이미지</h1><br>
                     <p>
                         스프링부트 독학으로 게시판만들어보기
@@ -175,12 +198,12 @@
                     </p>                    
                 </div>
 
-                <div class="items">
+                <div class="items" onclick="newPage(2)">
                     <h1>개인 포트폴리오</h1>
                     <p>400x400 사이즈</p>
                 </div>
 
-                <div class="items">
+                <div class="items" onclick="newPage(3)">
                     <h1>팀 포트폴리오</h1>
                     <p>400x400 사이즈</p>
                 </div>
@@ -196,39 +219,39 @@
                 <i class="fa-solid fa-check" style="font-size: 64px; color: blue;"></i>
                 <div style="margin-top: 50px;"></div>
                 <h1>읽어주셔서 감사합니다 :)</h1>
-                <h4>마지막으로, 해당 페이지 관련 정보들입니다</h4>
+                <h4>아래버튼들을 누르면 관련 정보들을 확인하실 수 있습니다</h4>
 
                 <div class="anothersDescript">
                     
-                    <div class="anotherItems">
+                    <div class="anotherItems" onclick="showModal(1)">
                         <h1>01</h1>
                         <h2>블로그</h2>
                         <hr>
                         <i class="fa-brands fa-blogger"></i>                        
                     </div>
                     
-                    <div class="anotherItems">
+                    <div class="anotherItems" onclick="showModal(2)">
                         <h1>02</h1>
                         <h2>깃허브</h2>
                         <hr>
                         <i class="fa-brands fa-github"></i>
                     </div>
                     
-                    <div class="anotherItems">
+                    <div class="anotherItems" onclick="showModal(3)">
                         <h1>03</h1>
                         <h2>웹폰트</h2>
                         <hr>
                         <i class="fa-brands fa-fonticons"></i>
                     </div>
                     
-                    <div class="anotherItems">
+                    <div class="anotherItems" onclick="showModal(4)">
                         <h1>04</h1>
                         <h2>폰트어썸</h2>
                         <hr>
                         <i class="fa-brands fa-square-font-awesome"></i>
                     </div>
                     
-                    <div class="anotherItems">
+                    <div class="anotherItems" onclick="showModal(5)">
                         <h1>05</h1>
                         <h2>부트스트랩</h2>
                         <hr>
@@ -236,11 +259,8 @@
                     </div>
                     
                 </div>
-
             </div>
-
         </article>
-
 
     </section>
 

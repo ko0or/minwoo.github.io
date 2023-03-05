@@ -12,6 +12,83 @@ overflow: hidden;
 
 
 */
+var locateSet;
+function locateModal() {
+    window.open(locateSet);
+    document.querySelector(".modal-background").style.display = "none";
+}
+
+function showModal(number) {
+    var title = document.querySelector(".modal-title");
+    var text = document.querySelector(".modal-text");
+
+    switch (number) {
+        case 1:
+            title.innerHTML = "블로그";
+            text.innerHTML = "개발자 블로그 구경할 수 있어요 !";
+            locateSet = "https://blog.naver.com/taehwa10404";
+            break;
+    
+        case 2:
+            title.innerHTML = "깃허브";
+            text.innerHTML = "보고계신 웹 페이지의 깃허브로 이동할 수 있습니다 !";
+            locateSet = "https://github.com/ko0or/minwoo.github.io";
+            break;
+    
+        case 3:
+            title.innerHTML = "웹폰트";
+            text.innerHTML = "눈누 사이트의 OFL(Open Font License)를 사용했습니다.";
+            locateSet = "https://noonnu.cc/";
+            break;
+    
+        case 4:
+            title.innerHTML = "폰트어썸";
+            text.innerHTML = "아이콘들은 폰트어썸에서 가져왔습니다.";
+            locateSet = "https://fontawesome.com/";
+            break;
+    
+        case 5:
+            title.innerHTML = "부트스트랩";
+            text.innerHTML = "부트스트랩의 CSS, JS를 기반으로 만들었습니다.";
+            locateSet = "https://getbootstrap.kr/";
+            break;
+    
+
+    }
+
+    document.querySelector(".modal-background").style.display = "block";
+}
+
+
+function hideModal() {
+    document.querySelector(".modal-background").style.display = "none";
+}
+
+
+
+
+
+function newPage(number) {
+    switch (number) {
+        
+        // 스킬부분에 포폴 3개 링크처리
+        case 1:
+            if (confirm("새창에서 열어볼까요?"))
+            window.open('https://blog.naver.com/taehwa10404/223023561896');        
+            break;
+
+        case 2:
+            alert("아직 준비중입니다..");
+            break;
+        
+        case 3:
+            alert("아직 준비중입니다..");
+            break;
+        
+    }
+}
+
+
 
 // 프로필란에 p 태그 display 방식 변경 (mouseOver 혹은 mouseLeave)
 function profileDescriptionBlock(element) { 
@@ -97,4 +174,4 @@ window.addEventListener('scroll', function() {
         upArrow.style.pointerEvents = 'none';
         
     }
-    });
+});
