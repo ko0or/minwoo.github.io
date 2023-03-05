@@ -12,42 +12,70 @@ overflow: hidden;
 
 
 */
+
+
+// 모달관련 
 var locateSet;
 function locateModal() {
     window.open(locateSet);
     document.querySelector(".modal-background").style.display = "none";
 }
 
-function showModal(number) {
+function showModal(selector) {
     var title = document.querySelector(".modal-title");
     var text = document.querySelector(".modal-text");
 
-    switch (number) {
-        case 1:
+    switch (selector) {
+
+        case "skill-item-01":
+            title.innerHTML = "작품 보러가기";
+            text.innerHTML = "선택하신 작품을 보러 가볼까요?";
+            locateSet = "https://blog.naver.com/taehwa10404/223023561896";
+            break;
+
+        /*
+        // HTML 문서에서 CTRL + F 아래 내용들 검색
+        // skill-item-02 , skill-item-03
+        // 검색후 onclick 속성값 주석처리된거 풀어줘야함 (중요)
+
+        case "skill-item-02":
+            title.innerHTML = " 준비중.. ";
+            text.innerHTML = " 설명란.. ";
+            locateSet = " 링크란.. ";
+            break;
+
+        case "skill-item-03":
+            title.innerHTML = " 준비중.. ";
+            text.innerHTML = " 설명란.. ";
+            locateSet = " 링크란.. ";
+            break;
+        */
+
+        case "blog":
             title.innerHTML = "블로그";
             text.innerHTML = "개발자 블로그 구경할 수 있어요 !";
             locateSet = "https://blog.naver.com/taehwa10404";
             break;
     
-        case 2:
+        case "github":
             title.innerHTML = "깃허브";
             text.innerHTML = "보고계신 웹 페이지의 깃허브로 이동할 수 있습니다 !";
             locateSet = "https://github.com/ko0or/minwoo.github.io";
             break;
     
-        case 3:
+        case "webfont":
             title.innerHTML = "웹폰트";
             text.innerHTML = "눈누 사이트의 OFL(Open Font License)를 사용했습니다.";
             locateSet = "https://noonnu.cc/";
             break;
     
-        case 4:
+        case "fontawesome":
             title.innerHTML = "폰트어썸";
             text.innerHTML = "아이콘들은 폰트어썸에서 가져왔습니다.";
             locateSet = "https://fontawesome.com/";
             break;
     
-        case 5:
+        case "bootstrap":
             title.innerHTML = "부트스트랩";
             text.innerHTML = "부트스트랩의 CSS, JS를 기반으로 만들었습니다.";
             locateSet = "https://getbootstrap.kr/";
@@ -68,25 +96,7 @@ function hideModal() {
 
 
 
-function newPage(number) {
-    switch (number) {
-        
-        // 스킬부분에 포폴 3개 링크처리
-        case 1:
-            if (confirm("새창에서 열어볼까요?"))
-            window.open('https://blog.naver.com/taehwa10404/223023561896');        
-            break;
 
-        case 2:
-            alert("아직 준비중입니다..");
-            break;
-        
-        case 3:
-            alert("아직 준비중입니다..");
-            break;
-        
-    }
-}
 
 
 
