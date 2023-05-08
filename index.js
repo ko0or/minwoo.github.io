@@ -30,7 +30,7 @@ function showModal(selector) {
         case "skill-item-01":
             title.innerHTML = "작품 보러가기";
             text.innerHTML = "선택하신 작품을 보러 가볼까요?";
-            locateSet = "https://blog.naver.com/taehwa10404/223023561896";
+            locateSet = "https://blog.naver.com/taehwa10404/223093875506";
             break;
 
         /*
@@ -122,31 +122,31 @@ function skilsDescriptionBlock(getItem) {
     if (getItem == "HTML") {
         title.innerHTML = "HyperTextMarkupLanguage";
         content.innerHTML = 
-        "DOM 개념을 알고있으며, 기본 태그들을 응용할 수 있습니다.";
+        "HTML의 다양한 태그및 기본개념을 이해하고 있습니다";
     }
 
     if (getItem == "CSS") {
         title.innerHTML = "CastingStyleSheet";
         content.innerHTML = 
-        "포지션, 레이아웃(FLEX), 애니메이션 효과를 응용할 수 있습니다.";
+        "기본적인 CSS 요소를 응용할 수 있습니다";
     }
     
     if (getItem == "JS") {
         title.innerHTML = "JavaScript";
         content.innerHTML = 
-        "자바스크립트로 CSS를 변경할 수 있습니다 ";
+        "자바스크립트및 제이쿼리 활용가능";
     }
 
     if (getItem == "JAVA") {
         title.innerHTML = "Java";
         content.innerHTML = 
-        "JDK 8 기준 mySQL API, Thread 응용이 가능합니다.";
+        "자바기반의 스프링 레거시, 스프링 부트 사용가능";
     }
 
     if (getItem == "SPRING") {
         title.innerHTML = "SpringBoot";
         content.innerHTML = 
-        "게시글 작성,수정,삭제,조회를 할 수 있는 간단한 기능을 구현할 수 있습니다.";
+        "다양한 디펜던시 활용경험이 있습니다. Seucrity, JPA, Thymeleaf, Lombok";
     }
     
     if (getItem == "PYTHON") {
